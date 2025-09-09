@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -15,8 +15,6 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="bg-gray-50 text-gray-800 scroll-smooth">
-    <div id="cursor-follower"></div>
-
     <!-- Navigation -->
     <nav
       class="fixed top-0 w-full z-50 glass transition-all duration-300"
@@ -24,31 +22,36 @@
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center py-4">
-          <div class="text-2xl font-bold gradient-text">DevPortfolio</div>
+          <div
+            class="text-2xl font-bold bg-gradient-to-r from-cyan-700 to-cyan-900 bg-clip-text text-transparent"
+          >
+            Pejantan Tangguh
+          </div>
+
           <div class="hidden md:flex space-x-8">
             <a
               href="#home"
-              class="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium"
+              class="text-gray-700 hover:text-cyan-700 transition-colors duration-300 font-medium"
               >Home</a
             >
             <a
               href="#about"
-              class="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium"
+              class="text-gray-700 hover:text-cyan-700 transition-colors duration-300 font-medium"
               >About</a
             >
             <a
               href="#projects"
-              class="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium"
+              class="text-gray-700 hover:text-cyan-700 transition-colors duration-300 font-medium"
               >Projects</a
             >
             <a
               href="#sap"
-              class="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium"
+              class="text-gray-700 hover:text-cyan-700 transition-colors duration-300 font-medium"
               >SAP ABAP</a
             >
             <a
               href="#contact"
-              class="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium"
+              class="text-gray-700 hover:text-cyan-700 transition-colors duration-300 font-medium"
               >Contact</a
             >
           </div>
@@ -115,7 +118,11 @@
             id="typed"
           >
             Muhammad
-            <span class="gradient-text block">Davy Wibowo</span>
+            <span
+              class="gradient-text block font-bold bg-gradient-to-r from-cyan-700 to-cyan-900 bg-clip-text text-transparent"
+            >
+              Davy Wibowo
+            </span>
           </h1>
           <p
             class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed"
@@ -126,13 +133,13 @@
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#projects"
-              class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover-lift shadow-lg"
+              class="bg-cyan-700 hover:bg-cyan-900 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover-lift shadow-lg"
             >
               View My Work
             </a>
             <a
               href="#contact"
-              class="border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 px-8 py-4 rounded-lg font-semibold transition-all duration-300"
+              class="border-2 border-gray-300 hover:border-cyan-900 text-gray-700 hover:text-cyan-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300"
             >
               Get In Touch
             </a>

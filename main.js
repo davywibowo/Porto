@@ -127,23 +127,6 @@ document.querySelectorAll("a, button").forEach((el) => {
   el.addEventListener("mouseleave", () => cursor.classList.remove("grow"));
 });
 
-// Ripple effect on click
-document.addEventListener("click", function (e) {
-  const ripple = document.createElement("span");
-  ripple.classList.add("ripple");
-  ripple.style.left = e.clientX + "px";
-  ripple.style.top = e.clientY + "px";
-
-  // dinamis sesuai ukuran layar
-  ripple.style.width = ripple.style.height = "200px";
-
-  document.body.appendChild(ripple);
-
-  setTimeout(() => {
-    ripple.remove();
-  }, 800); // lebih lama biar kelihatan
-});
-
 // Typed.js for typing effect
 
 let typed = new Typed("#typed", {
@@ -183,12 +166,20 @@ document.addEventListener("DOMContentLoaded", () => {
       .sendForm("service_295i2ag", "template_di7loe4", this)
       .then((res) => {
         console.log("✅ SUCCESS", res);
-        alert("✅ Message sent successfully!");
+        Swal.fire({
+          title: "Thank You!",
+          text: "You message has been sent!",
+          icon: "success",
+        });
         this.reset();
       })
       .catch((err) => {
         console.error("❌ ERROR", err);
-        alert("❌ Failed to send message. Check console for details.");
+        Swal.fire({
+          title: "Error",
+          text: "Failed to send Your message!",
+          icon: "error",
+        });
       })
       .finally(() => {
         // Balikin tombol ke normal
