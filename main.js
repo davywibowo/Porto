@@ -121,36 +121,6 @@ document.querySelectorAll(".skill-card").forEach((card) => {
   });
 });
 
-// Form demo
-document.querySelector("form").addEventListener("submit", (e) => {
-  e.preventDefault();
-  alert("Form submitted (demo only).");
-});
-
-// Button loading effect
-document.querySelectorAll("button").forEach((btn) => {
-  btn.addEventListener("click", function () {
-    if (this.type === "submit") {
-      const originalText = this.innerHTML;
-      this.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
-      this.disabled = true;
-
-      setTimeout(() => {
-        this.innerHTML = originalText;
-        this.disabled = false;
-      }, 2000);
-    }
-  });
-});
-
-// Custom cursor follower
-const cursor = document.getElementById("cursor-follower");
-
-document.addEventListener("mousemove", (e) => {
-  cursor.style.top = `${e.clientY}px`;
-  cursor.style.left = `${e.clientX}px`;
-});
-
 // Membesar saat hover ke link & button
 document.querySelectorAll("a, button").forEach((el) => {
   el.addEventListener("mouseenter", () => cursor.classList.add("grow"));
@@ -177,8 +147,53 @@ document.addEventListener("click", function (e) {
 // Typed.js for typing effect
 
 let typed = new Typed("#typed", {
-  strings: ["Professional", "Web Developer", "SAP Enthusiast"],
-  typeSpeed: 150,
-  backSpeed: 100,
+  strings: ["Professional", "SAP Enthusiast", "Web Developer"],
+  typeSpeed: 100,
+  backSpeed: 70,
   loop: true,
+});
+
+// main.js (fixed version with EmailJS integration + proper loading button)
+
+// =========================
+// EmailJS Integration
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
+  if (typeof emailjs !== "undefined") {
+    emailjs.init("eMZDywo_4Zq9lmFTV"); // Ganti dengan Public Key kamu
+    console.log("✅ EmailJS initialized");
+  } else {
+    console.error("❌ EmailJS failed to load");
+  }
+
+  const form = document.getElementById("contact-form");
+  const submitBtn = form.querySelector("button[type='submit']");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Tampilkan loading state di tombol
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML =
+      '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+    submitBtn.disabled = true;
+
+    console.log("📨 Sending form...");
+    emailjs
+      .sendForm("service_295i2ag", "template_di7loe4", this)
+      .then((res) => {
+        console.log("✅ SUCCESS", res);
+        alert("✅ Message sent successfully!");
+        this.reset();
+      })
+      .catch((err) => {
+        console.error("❌ ERROR", err);
+        alert("❌ Failed to send message. Check console for details.");
+      })
+      .finally(() => {
+        // Balikin tombol ke normal
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      });
+  });
 });
