@@ -122,3 +122,45 @@
     opacity: 0;
   }
 }
+
+/* Transisi halus saat ganti tema */
+* {
+  transition: background-color 0.25s ease, color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* Hero gradient versi dark */
+.dark .hero-gradient {
+  background: linear-gradient(135deg, #0b1220 0%, #0f172a 100%);
+}
+
+/* Glass versi dark (navbar, dsb.) */
+.dark .glass {
+  background-color: rgba(17, 24, 39, 0.8);
+  border-color: rgba(55, 65, 81, 0.3);
+}
+
+/* Kartu & konten umum */
+.dark .skill-card {
+  background-color: rgba(2, 6, 23, 0.6);
+}
+.dark .skill-card:hover {
+  background-color: rgba(2, 6, 23, 0.8);
+}
+
+.dark .section-divider {
+  background: linear-gradient(90deg, transparent, #0f172a, transparent);
+}
+
+/* Teks abu di dark */
+.dark .text-gray-600 {
+  color: #d1d5db;
+}
+.dark .text-gray-700 {
+  color: #e5e7eb;
+}
+
+/* Footer tetap kontras */
+footer {
+  transition: none;
+} /* biar nggak “ngedim” */

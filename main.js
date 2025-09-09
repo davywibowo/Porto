@@ -1,4 +1,7 @@
-console.log("test");
+window.addEventListener("beforeunload", function () {
+  window.scrollTo(0, 0);
+});
+
 // Mobile menu toggle
 const mobileMenuBtn = document.getElementById("mobile-menu-btn");
 const mobileMenu = document.getElementById("mobile-menu");
