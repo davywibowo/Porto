@@ -10,17 +10,15 @@
 }
 
 :root {
-  color-scheme: light !important;
+  color-scheme: dark !important;
 }
 
 html,
 body {
-  color-scheme: light;
   background: #f8fafc !important;
-  forced-color-adjust: none; /* cegah auto dark invert */
   color: #1f2937 !important;
+  forced-color-adjust: none; /* cegah auto invert di Android */
 }
-
 /* ==================================================
    Text & Gradients
 ================================================== */
