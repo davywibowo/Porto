@@ -17,13 +17,24 @@ mobileMenu.addEventListener("click", (e) => {
   }
 });
 
-// Smooth scrolling
+// Smooth scrolling dengan offset
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute("href"));
     if (target) {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      const navbarHeight = document.getElementById("navbar").offsetHeight;
+      const offset = 50; // <<=== ubah di sini sesuai selera
+
+      const offsetTop =
+        target.getBoundingClientRect().top +
+        window.pageYOffset -
+        (navbarHeight + offset);
+
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
     }
   });
 });
