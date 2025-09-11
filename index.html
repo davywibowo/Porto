@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio - Professional Web Developer</title>
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#f8fafc" />
+
+    <title>DavyWibowo Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -177,7 +180,10 @@
               </p>
             </div>
 
-            <div class="grid grid-cols-3 gap-4">
+            <div
+              class="grid [grid-template-columns:repeat(auto-fit,minmax(160px,1fr))] gap-6"
+            >
+              <!-- skill cards -->
               <div
                 class="skill-card bg-gray-50 p-6 rounded-xl text-center hover-lift hover:bg-blue-50 transition-all duration-300"
               >
@@ -210,14 +216,14 @@
                 </div>
                 <h3 class="font-semibold text-gray-800">React</h3>
               </div>
-              <div
+              <!-- <div
                 class="skill-card bg-gray-50 p-6 rounded-xl text-center hover-lift hover:bg-blue-50 transition-all duration-300"
               >
                 <div class="skill-icon text-4xl text-green-600 mb-3">
                   <i class="fab fa-node-js"></i>
                 </div>
                 <h3 class="font-semibold text-gray-800">Node.js</h3>
-              </div>
+              </div> -->
               <div
                 class="skill-card bg-gray-50 p-6 rounded-xl text-center hover-lift hover:bg-blue-50 transition-all duration-300"
               >
@@ -236,7 +242,7 @@
                 <div class="skill-icon text-4xl text-blue-600 mb-3">
                   <img
                     src="assets/sql.svg"
-                    alt="SAP Logo"
+                    alt="MySQL Logo"
                     class="w-14 h-14 mx-auto"
                   />
                 </div>

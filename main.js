@@ -17,14 +17,16 @@ mobileMenu.addEventListener("click", (e) => {
   }
 });
 
-// Smooth scrolling dengan offset
+// Smooth scrolling dengan offset biar gak kosong di atas
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute("href"));
     if (target) {
       const navbarHeight = document.getElementById("navbar").offsetHeight;
-      const offset = 50; // <<=== ubah di sini sesuai selera
+
+      // atur jarak scroll di sini
+      const offset = 40; // misal 40px, bisa kamu ubah 20 / 60 sesuai selera
 
       const offsetTop =
         target.getBoundingClientRect().top +

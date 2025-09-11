@@ -15,8 +15,10 @@
 
 html,
 body {
-  background-color: #f8fafc !important; /* Light mode background */
-  color: #1f2937 !important; /* Default text color */
+  color-scheme: light;
+  background: #f8fafc !important;
+  forced-color-adjust: none; /* cegah auto dark invert */
+  color: #1f2937 !important;
 }
 
 /* ==================================================
