@@ -13,42 +13,12 @@
   color-scheme: dark !important;
 }
 
-/* Tambahan khusus Samsung Internet */
 html,
 body {
+  color-scheme: light;
   background: #f8fafc !important;
+  forced-color-adjust: none; /* cegah auto dark invert */
   color: #1f2937 !important;
-  forced-color-adjust: none !important;
-  color-scheme: light !important;
-
-  /* Samsung-specific fixes */
-  -webkit-color-scheme: light !important;
-  background-color: #f8fafc !important;
-}
-
-/* Override semua possible dark selectors */
-body[data-theme="dark"],
-html[data-theme="dark"],
-.dark-mode,
-[data-bs-theme="dark"] {
-  background: #f8fafc !important;
-  color: #1f2937 !important;
-}
-
-/* Force override media query */
-@media (prefers-color-scheme: dark) {
-  *,
-  *::before,
-  *::after {
-    background-color: inherit !important;
-    color: inherit !important;
-  }
-
-  html,
-  body {
-    background: #f8fafc !important;
-    color: #1f2937 !important;
-  }
 }
 /* ==================================================
    Text & Gradients
