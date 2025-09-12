@@ -204,3 +204,26 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 });
+// Force light mode via JS
+document.documentElement.style.setProperty(
+  "color-scheme",
+  "light",
+  "important"
+);
+document.body.style.setProperty("background-color", "#f8fafc", "important");
+document.body.style.setProperty("color", "#1f2937", "important");
+
+// Detect Samsung Internet
+const isSamsung = /SamsungBrowser/i.test(navigator.userAgent);
+const lang = navigator.language.startsWith("id") ? "id" : "en";
+if (isSamsung) {
+  if (lang === "id") {
+    swal.fire(
+      "Untuk pengalaman terbaik, gunakan mode terang di pengaturan sistem."
+    );
+  } else {
+    sawl.fire(
+      "For the best experience, use light mode in the system settings."
+    );
+  }
+}

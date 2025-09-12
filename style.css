@@ -13,11 +13,42 @@
   color-scheme: dark !important;
 }
 
+/* Tambahan khusus Samsung Internet */
 html,
 body {
   background: #f8fafc !important;
   color: #1f2937 !important;
-  forced-color-adjust: none; /* cegah auto invert di Android */
+  forced-color-adjust: none !important;
+  color-scheme: light !important;
+
+  /* Samsung-specific fixes */
+  -webkit-color-scheme: light !important;
+  background-color: #f8fafc !important;
+}
+
+/* Override semua possible dark selectors */
+body[data-theme="dark"],
+html[data-theme="dark"],
+.dark-mode,
+[data-bs-theme="dark"] {
+  background: #f8fafc !important;
+  color: #1f2937 !important;
+}
+
+/* Force override media query */
+@media (prefers-color-scheme: dark) {
+  *,
+  *::before,
+  *::after {
+    background-color: inherit !important;
+    color: inherit !important;
+  }
+
+  html,
+  body {
+    background: #f8fafc !important;
+    color: #1f2937 !important;
+  }
 }
 /* ==================================================
    Text & Gradients
@@ -37,6 +68,13 @@ body {
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   background-color: rgba(255, 255, 255, 0.75);
   border: 1px solid rgba(209, 213, 219, 0.3);
+}
+
+.glass-dark {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 24, 39, 0.8);
+  border: 1px solid rgba(55, 65, 81, 0.3);
 }
 
 /* 
